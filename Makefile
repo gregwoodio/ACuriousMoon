@@ -15,6 +15,8 @@ import: master
 	@echo "COPY import.master_plan FROM $(CSV) WITH DELIMITER ',' HEADER CSV;" >> $(BUILD)
 
 normalize: import
+	@cat $(SCRIPTS)/lookup_tables.sql > $(NORMALIZE)
+	@cat $(SCRIPTS)/events.sql >> $(NORMALIZE)
 	@cat $(NORMALIZE) >> $(BUILD)
 
 clean:

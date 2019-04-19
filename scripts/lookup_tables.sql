@@ -1,5 +1,5 @@
 -- teams
-drop table if exists teams;
+drop table if exists teams cascade;
 
 select distinct (team)
 as description
@@ -10,7 +10,7 @@ alter table teams
 add id serial primary key;
 
 -- library_definitions
-drop table if exists library_definitions;
+drop table if exists library_definitions cascade;
 
 select distinct (library_definition)
 as description
@@ -21,7 +21,7 @@ alter table library_definitions
 add id serial primary key;
 
 -- spass_types
-drop table if exists spass_types;
+drop table if exists spass_types cascade;
 
 select distinct (spass_type)
 as description
@@ -32,7 +32,7 @@ alter table spass_types
 add id serial primary key;
 
 -- targets
-drop table if exists targets;
+drop table if exists targets cascade;
 
 select distinct (target)
 as description
@@ -43,7 +43,7 @@ alter table targets
 add id serial primary key;
 
 -- requests
-drop table if exists requests;
+drop table if exists requests cascade;
 
 select distinct (request_name)
 as description
